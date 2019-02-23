@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import './User.css';
-import { auth } from 'Config/fire.jsx';
-import { db } from 'Config/fire.jsx';
-import { provider } from 'Config/fire.jsx';
+import '../../Styles/User.css';
+import { auth } from '../../Config/fire';
+import { db } from '../../Config/fire';
+import { provider } from '../../Config/fire';
 
 class UserRegistration extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class UserRegistration extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <input type="text" name="email" placeholder="Email..." />
           <input type="text" name="password" placeholder="Password..." />
           <button onClick={this.signUp}>Register</button>

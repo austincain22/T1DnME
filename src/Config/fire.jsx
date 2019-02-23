@@ -11,7 +11,8 @@ const config = {
 
 const fire = firebase.intializeApp(config);
 
+export default fire; // allow other files in the project to be able to access the information.
 export const provider = firebase.auth.GoogleAuthProvider();
 export const auth = fire.auth();
 export const db = fire.firestore();
-export default firestore;
+
