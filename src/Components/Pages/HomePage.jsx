@@ -1,12 +1,11 @@
-<<<<<<< Updated upstream
-
-ReactDOM.render(
-    <h1>Hello, world! This is the home page</h1>,
-    document.getElementById('root')
-  );
-=======
 import React, { Component } from 'react';
 import '../../Styles/GlobalStyles.css';
+
+/*ReactDOM.render(
+    <h1>Hello, world! This is the home page</h1>,
+    document.getElementById('root')
+  );*/
+
 
 class Home extends Component{
 
@@ -19,4 +18,3 @@ class Home extends Component{
 }
 
 export default Home;
->>>>>>> Stashed changes
