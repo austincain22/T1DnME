@@ -1,6 +1,6 @@
 import firebase from "firebase";
 
-const config ={
+const config = {
     apiKey: "AIzaSyAuY3eV2AgbmCGYFDd9KViYc1F44KE3gyU",
     authDomain: "t1dnme-a1012.firebaseapp.com",
     databaseURL: "https://t1dnme-a1012.firebaseio.com",
@@ -9,6 +9,9 @@ const config ={
     messagingSenderId: "907329423038"
 };
 
-firebase.intializeApp(config);
+const fire = firebase.intializeApp(config);
 
+export const provider = firebase.auth.GoogleAuthProvider();
+export const auth = fire.auth();
+export const db = fire.firestore();
 export default firestore;
