@@ -8,7 +8,13 @@ import HomePage from './../Pages/HomePage'
 const routing = (
   <Router>
     <div>
-      <Route path="/" component={HomePage} />
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+      </ul>
+
+      <Route exact path="/" component={HomePage} />
 
     </div>
   </Router>
