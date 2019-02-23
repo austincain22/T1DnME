@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../../Styles/User.css';
+import '../Styles/User.css';
 
-class UserLogin extends Component {
+class Login extends Component {
   render() {
     return (
       <div className="App">
@@ -24,4 +24,4 @@ class UserLogin extends Component {
   }
 }
 
-export default UserLogin;
+export default Login;

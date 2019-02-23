@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import '../../Styles/User.css';
-import { auth } from '../../Config/fire';
-import { db } from '../../Config/fire';
-import { provider } from '../../Config/fire';
+import '../Styles/User.css';
+import { auth } from '../Config/fire';
+import { db } from '../Config/fire';
+import { provider } from '../Config/fire';
 
-class UserRegistration extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,4 +47,4 @@ class UserRegistration extends Component {
   }
 }
 
-export default UserRegistration;
+export default Register;

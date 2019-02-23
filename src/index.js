@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './Styles/index.css';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-import Home from './Components/Pages/HomePage';
-import Register from './Components/Pages/UserRegistration'
-import Login from './Components/Pages/UserLogin'
+import Home from './Pages/HomePage';
+import Register from './Pages/RegisterPage'
+import Login from './Pages/LoginPage'
 
 const routing = (
     <Router>
