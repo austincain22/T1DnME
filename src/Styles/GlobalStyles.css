@@ -7,21 +7,32 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: bisque;
+  background-color: rgb(46, 45, 44);
 
     height: 100%;
 
 
 }
 
+.gridPic{
+    height: 100%;
+    width: 100%;
+    margin-right:25px;
+}
+.gridItem{
+    background-color: beige;
+}
 .HomeMain {
-    background-image: url(../Images/child.jpg);
+    
 
     height: 100%;
-  
+    width: 50%;
+    float:right;
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
+    
 }
 
 .HomeHeader{
@@ -33,6 +44,6 @@ body {
 }
 
 .bodyContainer {
-    height:100;
+    height:400px;
 
 }

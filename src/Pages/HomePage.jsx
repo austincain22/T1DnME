@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
+import child from "../Images/child.jpg";
 
   const styles = theme => ({
     root: {
@@ -22,81 +23,24 @@ import { withStyles } from '@material-ui/core/styles'
     return( 
 
         <div className="HomeMain">
-        <div className="HomeHeader">
-
-        </div>
-        <div className="HomeBody">
+        
+        
             <Grid container spacing={24}
+            direction="row"
+            justify="center"
             className="bodyContainer">
-                this is the beginning of the container
-                <Grid item xs={6}>
-                    <Paper className={classes.paper}>xs=6</Paper>
+                
+                <Grid item xs={10} className="gridItem">
+                    <img src={child} className="gridPic"></img>
                 </Grid>
-                <Grid item xs={6}>
-                    <Paper className={classes.paper}>xs=6</Paper>
+
+                <Grid item xs={10} className="gridItem">
+                    <Paper/>
                 </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>xs=3</Paper>
+                
                 </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                </Grid>
-        </div>
-        <div>
-        <Grid container spacing={24}
-            className="bodyContainer">
-                this is the beginning of the container
-                <Grid item xs={6}>
-                    <Paper className={classes.paper}>xs=6</Paper>
-                </Grid>
-                <Grid item xs={6}>
-                    <Paper className={classes.paper}>xs=6</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                </Grid>
-        </div>
-        <div>
-        <Grid container spacing={24}
-            className="bodyContainer">
-                this is the beginning of the container
-                <Grid item xs={6}>
-                    <Paper className={classes.paper}>xs=6</Paper>
-                </Grid>
-                <Grid item xs={6}>
-                    <Paper className={classes.paper}>xs=6</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper className={classes.paper}>xs=3</Paper>
-                </Grid>
-                </Grid>
-        </div>
+        
+        
         </div>
     )
   }
