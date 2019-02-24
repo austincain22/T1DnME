@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import { db } from '../Config/fire'
 import { ForumsList } from '../Components/Forums/Forums'
-import { Posts } from './PostsPage'
+import { PostsList } from './PostsPage'
 
 const styles = theme => ({
   root: {
@@ -91,16 +91,17 @@ class Forums extends React.Component {
       <div className={classes.root}>
         <Grid container spacing={0}
           alignItems="center"
-          justify="center"
+          justify="space-evenly"
           style={{
             minHeight: '100vh',
             minWidth: '200vh'
           }}>
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Paper className={classes.paper}>
+            <PostsList className={this.props.shouldHide ? 'hidden' : ''}/>
               <ForumsList
                 forums={forums}
-                className={this.props.shouldHide ? 'hidden' : ''}
+                className={this.props.shouldHide2 ? 'hidden' : ''}
               />
             </Paper>
           </Grid>

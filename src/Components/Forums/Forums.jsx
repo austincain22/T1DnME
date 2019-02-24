@@ -17,49 +17,7 @@ export class ForumsList extends Component {
       posts: []
     }
   }
-  getPosts = async () => {
-    const postName = await db
-      .collection('Posts')
-      .where('forumID', '==', this.state.forumID)
-      .get()
-      .then(snapshot =>
-        snapshot.docs.map(doc => {
-          return {
-            ...doc.data(),
-            id: doc.id
-          }
-        })
-      )
 
-    console.log('Forum Names: ', postName)
-
-    this.setState({
-      posts: postName
-    })
-  }
-
-  getPosts = async id => {
-    const forumID = await id
-
-    const postName = await db
-      .collection('Posts')
-      .where('forumID', '==', forumID)
-      .get()
-      .then(snapshot =>
-        snapshot.docs.map(doc => {
-          return {
-            ...doc.data(),
-            id: doc.id
-          }
-        })
-      )
-
-    console.log('Forum Names: ', postName)
-
-    this.setState({
-      posts: postName
-    })
-  }
 
   handleTaskClick () {
     this.setState(prevState => ({
@@ -77,7 +35,7 @@ export class ForumsList extends Component {
 
   render () {
     const { classes, forums } = this.props
-    const { forumID, taskPressed } = this.state
+    const { taskPressed } = this.state
 
     return (
       <div className={classes}>
