@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< Updated upstream
     "@material-ui/core": "^3.9.2",
+=======
+    "@firebase/firestore": "^1.0.4",
+>>>>>>> Stashed changes
     "firebase": "^5.8.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
@@ -25,5 +29,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "webpack": "^4.29.5"
+  }
 }
