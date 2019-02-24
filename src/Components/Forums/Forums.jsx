@@ -7,18 +7,18 @@ import Grid from '@material-ui/core/Grid'
 // import { db } from '../../Config/fire'
 
 export class ForumsList extends Component {
-  render () {
+  render() {
     const { classes, forums } = this.props
 
     return (
-      <div className={classes} alignItems='center'>
-        <Grid container alignItems='center'>
+      <div className={classes}>
+        <Grid container>
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Paper className={classes} />
             {forums.map(form => {
-              return ( 
-                <div key={form.id}> 
-                <p>{form.taskName}</p>
+              return (
+                <div key={form.id}>
+                  <p>{form.taskName}</p>
                 </div>
               )
             })}

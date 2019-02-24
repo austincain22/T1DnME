@@ -50,20 +50,20 @@ class Forums extends React.Component {
     this.setState({ value: index })
   }
 
-  async componentDidMount () {
+  async componentDidMount() {
     this.getForum()
   }
 
-  render () {
+  render() {
     const { classes, forums } = this.props
 
     return (
       <div className={classes.root}>
-        <Grid container alignItems='center' spacing={8}>
+        <Grid container justify='center' spacing={8}>
           {/* <Grid item xs={12} sm={6} md={4} lg={3}> */}
-            <Paper className={classes.paper}>
-              <ForumsList forums={this.state.forums} />
-            </Paper>
+          <Paper className={classes.paper}>
+            <ForumsList forums={this.state.forums} />
+          </Paper>
           {/* </Grid> */}
           {/* <Grid item xs={6}>
             <Paper className={classes.paper}>xs=6</Paper>
