@@ -193,12 +193,13 @@ class sideBar extends React.Component {
               className={classNames(classes.content, {
                 [classes.contentShift]: open,
               })}
+              style={{ backgroundColor: 'Grey' }}
             >
               <Route exact path="/" component={Home} />
               <Route path="/register" component={Register} />
               <Route path="/login" component={Login} />
               <Route path="/forums" component={Forums} />
-              <Route path="/dm" component={DMing} />
+              <Route path="/dms" component={DMing} />
             </main>
           </div>
         </Router>
