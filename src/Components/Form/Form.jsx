@@ -46,8 +46,8 @@ export default class Form extends Component {
   }
   render() {
     return (
-      <div className="form">
-        <div className="form__message">
+      <div>
+        <div>
           { this.state.list.map((item, index) =>
             <Message key={index} message={item} />
           )}

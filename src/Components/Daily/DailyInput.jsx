@@ -108,7 +108,7 @@ class DailyInput extends Component {
           midnightBS,
           midnightNotes,
           midnightFood,
-          handleAddTaskChange
+          handleAddEventChange
       } = this.props;
   
       return (
@@ -125,7 +125,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="wakeUpBS"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={wakeUpBS}
                     />
                   </label>
@@ -135,7 +135,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="wakeUpNotes"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={wakeUpNotes}
                     />
                   </label>
@@ -145,7 +145,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="wakeUpFood"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={wakeUpFood}
                     />
                   </label>
@@ -155,7 +155,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="breakfastBS"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={breakfastBS}
                     />
                   </label>
@@ -165,7 +165,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="breakfastNotes"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={breakfastNotes}
                     />
                   </label>
@@ -175,7 +175,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="breakfastFood"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={breakfastFood}
                     />
                   </label>
@@ -185,7 +185,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="midMorningBS"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={midMorningBS}
                     />
                   </label>
@@ -195,7 +195,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="midMorningNotes"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={midMorningNotes}
                     />
                   </label>
@@ -205,7 +205,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="midMorningFood"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={midMorningFood}
                     />
                   </label>
@@ -215,7 +215,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="lunchBS"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={lunchBS}
                     />
                   </label>
@@ -225,7 +225,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="lunchNotes"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={lunchNotes}
                     />
                   </label>
@@ -235,7 +235,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="lunchFood"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={lunchFood}
                     />
                   </label>
@@ -245,7 +245,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="afterSchoolBS"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={afterSchoolBS}
                     />
                   </label>
@@ -255,7 +255,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="afterSchoolNotes"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={afterSchoolNotes}
                     />
                   </label>
@@ -265,7 +265,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="afterSchoolFood"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={afterSchoolFood}
                     />
                   </label>
@@ -275,7 +275,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="dinnerBS"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={dinnerBS}
                     />
                   </label>
@@ -285,7 +285,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="dinnerNotes"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={dinnerNotes}
                     />
                   </label>
@@ -295,7 +295,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="dinnerFood"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={dinnerFood}
                     />
                   </label>
@@ -305,7 +305,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="bedtimeBS"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={bedtimeBS}
                     />
                   </label>
@@ -315,7 +315,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="bedtimeNotes"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={bedtimeNotes}
                     />
                   </label>
@@ -325,7 +325,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="bedtimeFood"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={bedtimeFood}
                     />
                   </label>
@@ -335,7 +335,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="midnightBS"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={midnightBS}
                     />
                   </label>
@@ -345,7 +345,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="midnightNotes"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={midnightNotes}
                     />
                   </label>
@@ -355,7 +355,7 @@ class DailyInput extends Component {
                     <input
                       type="text"
                       name="midnightFood"
-                      onChange={event => handleAddTaskChange(event)}
+                      onChange={event => handleAddEventChange(event)}
                       value={midnightFood}
                     />
                   </label>

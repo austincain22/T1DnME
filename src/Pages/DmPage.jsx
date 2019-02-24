@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import '../Styles/GlobalStyles.css';
-import Form from '../Components/Form/Form.jsx';
+//import Form from '../Components/Form/Form.jsx';
 import Grid from '@material-ui/core/Grid';
 
 import db from "../Config/fire.jsx";
@@ -53,7 +53,7 @@ class DMing extends Component {
           
         </div>
         <div className="app__list">
-          <Form user={this.state.user} />
+          {/*<Form user={this.state.user} />*/}
         </div>
         </Grid>
       </div>
