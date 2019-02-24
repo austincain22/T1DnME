@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import { db } from '../Config/fire'
 import { ForumsList } from '../Components/Forums/Forums'
+import { PostsList } from './PostsPage'
 
 const styles = theme => ({
   root: {
@@ -20,7 +21,8 @@ const styles = theme => ({
 
 class Forums extends React.Component {
   state = {
-    forums: []
+    forums: [],
+    handleTaskClick: this.handleTaskClick.bind(this)
   }
 
   getForum = async () => {
@@ -43,6 +45,33 @@ class Forums extends React.Component {
     })
   }
 
+  // getPosts = async () => {
+  //   const postName = await db
+  //     .collection('Posts')
+  //     .where('', '==')
+  //     .get()
+  //     .then(snapshot =>
+  //       snapshot.docs.map(doc => {
+  //         return {
+  //           ...doc.data(),
+  //           id: doc.id
+  //         }
+  //       })
+  //     )
+
+  //   console.log('Forum Names: ', postName)
+
+  //   this.setState({
+  //     posts: postName
+  //   })
+  // }
+
+  handleTaskClick() {
+    this.setState(prevState => ({
+      taskPressed: !prevState.taskPressed
+    }))
+  }
+
   handleChange = (event, value) => {
     this.setState({ value })
   }
@@ -50,38 +79,31 @@ class Forums extends React.Component {
     this.setState({ value: index })
   }
 
-  async componentDidMount () {
+  async componentDidMount() {
     this.getForum()
   }
 
-  render () {
+  render() {
     const { classes } = this.props
+    const { forums } = this.state
 
     return (
       <div className={classes.root}>
-        <Grid container spacing={24}>
+        <Grid container spacing={0}
+          alignItems="center"
+          justify="space-evenly"
+          style={{
+            minHeight: '100vh',
+            minWidth: '200vh'
+          }}>
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Paper className={classes.paper}>
-              <ForumsList />
+            <PostsList className={this.props.shouldHide ? 'hidden' : ''}/>
+              <ForumsList
+                forums={forums}
+                className={this.props.shouldHide2 ? 'hidden' : ''}
+              />
             </Paper>
-          </Grid>
-          <Grid item xs={6}>
-            <Paper className={classes.paper}>xs=6</Paper>
-          </Grid>
-          <Grid item xs={6}>
-            <Paper className={classes.paper}>xs=6</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>xs=3</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>xs=3</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>xs=3</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>xs=3</Paper>
           </Grid>
         </Grid>
       </div>
