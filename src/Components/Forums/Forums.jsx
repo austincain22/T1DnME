@@ -5,10 +5,31 @@ import PropTypes from 'prop-types'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
-
-// import { db } from '../../Config/fire'
+import { db } from '../../Config/fire'
+// import Posts from '../../Pages/PostsPage'
 
 export class ForumsList extends Component {
+  getPosts = async () => {
+    const postName = await db
+      .collection('Posts')
+      .where('forumID', '==', this.state.forumID)
+      .get()
+      .then(snapshot =>
+        snapshot.docs.map(doc => {
+          return {
+            ...doc.data(),
+            id: doc.id
+          }
+        })
+      )
+
+    console.log('Forum Names: ', postName)
+
+    this.setState({
+      posts: postName
+    })
+  }
+
   setForumID = async id => {
     const forumID = await id
 
@@ -17,6 +38,7 @@ export class ForumsList extends Component {
     })
 
     console.log('forumID: ', forumID)
+    this.getPosts()
   }
 
   render () {

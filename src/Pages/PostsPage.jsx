@@ -1,54 +1,60 @@
-import React from 'react'
-// import styles from '../Styles/index.css';
-import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
-import Paper from '@material-ui/core/Paper'
-import Grid from '@material-ui/core/Grid'
-import { db } from '../Config/fire'
-import { ForumsList } from '../Components/Forums/Forums'
+// import React, { Component } from 'react'
+// // import styles from '../Styles/index.css';
+// import PropTypes from 'prop-types'
+// // import { withStyles } from '@material-ui/core/styles'
+// import Paper from '@material-ui/core/Paper'
+// import Grid from '@material-ui/core/Grid'
+// import Button from '@material-ui/core/Button'
+// import { db } from '../Config/fire'
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1
-  },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary
-  }
-})
+// export class Posts extends Component {
+//   getPosts = async () => {
+//     const postName = await db
+//       .collection('Posts')
+//       .where('forumID', '==', forumID)
+//       .get()
+//       .then(snapshot =>
+//         snapshot.docs.map(doc => {
+//           return {
+//             ...doc.data(),
+//             id: doc.id
+//           }
+//         })
+//       )
 
-class Posts extends React.Component {
-  handleChange = (event, value) => {
-    this.setState({ value })
-  }
-  handleChangeIndex = index => {
-    this.setState({ value: index })
-  }
+//     console.log('Forum Names: ', postName)
 
-  async componentDidMount () {
-    this.getForum()
-  }
+//     this.setState({
+//       posts: postName
+//     })
+//   }
 
-  render () {
-    const { classes } = this.props
+//   render () {
+//     const { classes } = this.props
+//     const { posts } = this.state
 
-    return (
-      <div className={classes.root}>
-        <Grid container justify='center' spacing={12}>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <Paper className={classes.paper}>
-              <ForumsList forums={this.state.forums} />
-            </Paper>
-          </Grid>
-        </Grid>
-      </div>
-    )
-  }
-}
+//     return (
+//       <div className={classes}>
+//         {posts.map(post => {
+//           return (
+//             <Grid item>
+//               {/* <Button> */}
+//               <Paper rounded='true' item xs={12} sm={6} md={4} lg={3}>
+//                 <div key={post.id}>
+//                   <p>{post.forumName}</p>
+//                 </div>
+//               </Paper>
+//               {/* </Button> */}
+//             </Grid>
+//           )
+//         })}
+//       </div>
+//     )
+//   }
+// }
 
-Posts.propTypes = {
-  classes: PropTypes.object.isRequired
-}
+// Posts.propTypes = {
+//   forums: PropTypes.array.isRequired
+// }
 
-export default withStyles(styles)(Posts)
+// export default Posts

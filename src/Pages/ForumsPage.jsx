@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import { db } from '../Config/fire'
 import { ForumsList } from '../Components/Forums/Forums'
+import { Posts } from './PostsPage'
 
 const styles = theme => ({
   root: {
@@ -20,8 +21,7 @@ const styles = theme => ({
 
 class Forums extends React.Component {
   state = {
-    forums: [],
-    posts: []
+    forums: []
   }
 
   getForum = async () => {
@@ -44,26 +44,26 @@ class Forums extends React.Component {
     })
   }
 
-  getPosts = async () => {
-    const postName = await db
-      .collection('Posts')
-      .where('', '==')
-      .get()
-      .then(snapshot =>
-        snapshot.docs.map(doc => {
-          return {
-            ...doc.data(),
-            id: doc.id
-          }
-        })
-      )
+  // getPosts = async () => {
+  //   const postName = await db
+  //     .collection('Posts')
+  //     .where('', '==')
+  //     .get()
+  //     .then(snapshot =>
+  //       snapshot.docs.map(doc => {
+  //         return {
+  //           ...doc.data(),
+  //           id: doc.id
+  //         }
+  //       })
+  //     )
 
-    console.log('Forum Names: ', postName)
+  //   console.log('Forum Names: ', postName)
 
-    this.setState({
-      posts: postName
-    })
-  }
+  //   this.setState({
+  //     posts: postName
+  //   })
+  // }
 
   handleChange = (event, value) => {
     this.setState({ value })
