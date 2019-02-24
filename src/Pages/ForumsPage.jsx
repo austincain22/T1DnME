@@ -21,7 +21,8 @@ const styles = theme => ({
 
 class Forums extends React.Component {
   state = {
-    forums: []
+    forums: [],
+    handleTaskClick: this.handleTaskClick.bind(this)
   }
 
   getForum = async () => {
@@ -65,6 +66,12 @@ class Forums extends React.Component {
   //   })
   // }
 
+  handleTaskClick () {
+    this.setState(prevState => ({
+      taskPressed: !prevState.taskPressed
+    }))
+  }
+
   handleChange = (event, value) => {
     this.setState({ value })
   }
@@ -85,7 +92,10 @@ class Forums extends React.Component {
         <Grid container justify='center' spacing={12}>
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Paper className={classes.paper}>
-              <ForumsList forums={forums} />
+              <ForumsList
+                forums={forums}
+                className={this.props.shouldHide ? 'hidden' : ''}
+              />
             </Paper>
           </Grid>
         </Grid>

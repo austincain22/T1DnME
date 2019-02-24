@@ -9,6 +9,14 @@ import { db } from '../../Config/fire'
 // import Posts from '../../Pages/PostsPage'
 
 export class ForumsList extends Component {
+  constructor (props) {
+    super(props)
+    this.handleTaskClick = this.handleTaskClick.bind(this)
+    this.state = {
+      taskPressed: true,
+      posts: []
+    }
+  }
   getPosts = async () => {
     const postName = await db
       .collection('Posts')
@@ -30,20 +38,46 @@ export class ForumsList extends Component {
     })
   }
 
-  setForumID = async id => {
+  getPosts = async id => {
     const forumID = await id
 
-    this.setState({
-      forumID: forumID
-    })
+    const postName = await db
+      .collection('Posts')
+      .where('forumID', '==', forumID)
+      .get()
+      .then(snapshot =>
+        snapshot.docs.map(doc => {
+          return {
+            ...doc.data(),
+            id: doc.id
+          }
+        })
+      )
 
-    console.log('forumID: ', forumID)
-    this.getPosts()
+    console.log('Forum Names: ', postName)
+
+    this.setState({
+      posts: postName
+    })
+  }
+
+  handleTaskClick () {
+    this.setState(prevState => ({
+      taskPressed: !prevState.taskPressed
+    }))
+  }
+
+  handleChange = (event, value) => {
+    this.setState({ value })
+  }
+
+  handleChangeIndex = index => {
+    this.setState({ value: index })
   }
 
   render () {
     const { classes, forums } = this.props
-    // const { forumID } = this.state
+    const { forumID, taskPressed } = this.state
 
     return (
       <div className={classes}>
@@ -51,12 +85,15 @@ export class ForumsList extends Component {
           return (
             // <Grid container justify='space-evenly' alignItems='center'>
             <Grid item>
-              <Button onClick={() => this.setForumID(form.id)}>
-                <Paper rounded='true' item xs={12} sm={6} md={4} lg={3}>
-                  <div key={form.id}>
-                    <p>{form.forumName}</p>
-                  </div>
-                </Paper>
+              <Button
+                onClick={(() => this.getPosts(form.id), this.handleTaskClick)}>
+                {taskPressed && (
+                  <Paper rounded='true' item xs={12} sm={6} md={4} lg={3}>
+                    <div key={form.id}>
+                      <p>{form.forumName}</p>
+                    </div>
+                  </Paper>
+                )}
               </Button>
             </Grid>
           )
