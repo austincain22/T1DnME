@@ -59,12 +59,12 @@ class Forums extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Grid container justify='center' spacing={8}>
-          {/* <Grid item xs={12} sm={6} md={4} lg={3}> */}
+        <Grid container justify='center' spacing={12}>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
           <Paper className={classes.paper}>
             <ForumsList forums={this.state.forums} />
           </Paper>
-          {/* </Grid> */}
+          </Grid>
           {/* <Grid item xs={6}>
             <Paper className={classes.paper}>xs=6</Paper>
           </Grid>
