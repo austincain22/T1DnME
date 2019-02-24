@@ -26,6 +26,13 @@ import ListItemText from '@material-ui/core/ListItemText'
 import InboxIcon from '@material-ui/icons/MoveToInbox'
 import MailIcon from '@material-ui/icons/Mail'
 
+//import indexRoutes from '../Routes/index.jsx';
+import Home from '../Pages/HomePage.jsx';
+import Register from '../Pages/RegisterPage.jsx';
+import Login from '../Pages/LoginPage.jsx';
+import Forums from '../Pages/ForumsPage.jsx';
+import DMing from '../Pages/DmPage.jsx';
+
 
 const drawerWidth = 240;
 
@@ -83,9 +90,9 @@ const styles = theme => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
     marginLeft: 0,
+    //marginRight: 0
   },
 });
-
 
 
 
@@ -101,6 +108,7 @@ class sideBar extends React.Component {
   handleDrawerClose = () => {
     this.setState({ open: false })
   }
+
 
   render() {
     const { classes, theme } = this.props;
@@ -128,63 +136,72 @@ class sideBar extends React.Component {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Drawer
-          className={classes.drawer}
-          variant="persistent"
-          anchor="left"
-          open={open}
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-        >
-          <div className={classes.drawerHeader}>
-            <IconButton onClick={this.handleDrawerClose}>
-              {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-            </IconButton>
+        <Router>
+          <div>
+            <Drawer
+              className={classes.drawer}
+              variant="persistent"
+              anchor="left"
+              open={open}
+              classes={{
+                paper: classes.drawerPaper,
+              }}
+            >
+              <div className={classes.drawerHeader}>
+                <IconButton onClick={this.handleDrawerClose}>
+                  {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                </IconButton>
+              </div>
+              <Divider />
+              <List>
+                <div>
+                  <Link to="/">
+                    <ListItem button>
+                      <ListItemText primary="Home" />
+                    </ListItem>
+                  </Link>
+                  <Link to="/forums">
+                    <ListItem button>
+                      <ListItemText primary="Forums" />
+                    </ListItem>
+                  </Link>
+                  <Link to="/faq">
+                    <ListItem button>
+                      <ListItemText primary="FAQ" />
+                    </ListItem>
+                  </Link>
+                  <Link to="/register">
+                    <ListItem button>
+                      <ListItemText primary="Register" />
+                    </ListItem>
+                  </Link>
+                  <Link to="/login">
+                    <ListItem button>
+                      <ListItemText primary="Login" />
+                    </ListItem>
+                  </Link>
+                  <Link to="/dms">
+                    <ListItem button>
+                      <ListItemText primary="DM" />
+                    </ListItem>
+                  </Link>
+                </div>
+              </List>
+              <Divider />
+            </Drawer>
+            <main
+              className={classNames(classes.content, {
+                [classes.contentShift]: open,
+              })}
+            >
+              <Route exact path="/" component={Home} />
+              <Route path="/register" component={Register} />
+              <Route path="/login" component={Login} />
+              <Route path="/forums" component={Forums} />
+              <Route path="/dm" component={DMing} />
+            </main>
           </div>
-          <Divider />
-          <List>
-            {['Home', 'Forums', 'FAQ', 'Register'].map((text, index) => (
-              <Link to={"/" + text}>
-                <ListItem button key={text}>
-                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItem>
-              </Link>
-            ))}
-          </List>
-          <Divider />
-        </Drawer>
-        <main
-          className={classNames(classes.content, {
-            [classes.contentShift]: open,
-          })}
-        >
-          <Typography paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent
-            elementum facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in
-            hendrerit gravida rutrum quisque non tellus. Convallis convallis tellus id interdum
-            velit laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing.
-            Amet nisl suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod quis
-            viverra nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo.
-            Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus
-            at augue. At augue eget arcu dictum varius duis at consectetur lorem. Velit sed
-            ullamcorper morbi tincidunt. Lorem donec massa sapien faucibus et molestie ac.
-          </Typography>
-          <Typography paragraph>
-            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-            facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-            tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-            consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus
-            sed vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in.
-            In hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-            et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique
-            sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo
-            viverra maecenas accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam
-            ultrices sagittis orci a.
-          </Typography>
-        </main>
+        </Router>
       </div>
     )
   }

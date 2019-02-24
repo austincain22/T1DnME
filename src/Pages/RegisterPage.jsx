@@ -11,9 +11,10 @@ import Grid from '@material-ui/core/Grid'
 import fire from '../Config/fire'
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
+import SideBar from '../Components/SideBar.jsx';
 
 
-const styles = theme => ({
+const regStyles = theme => ({
   root: {
     flexGrow: 1
   },
@@ -94,10 +95,9 @@ class Register extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
-
-        <Grid container spacing={24} justify="center">
-          <Grid item xs={3} zeroMinWidth>
+      <div className={classes.root} display="center">
+        <Grid container spacing={24} justify="center" >
+          <Grid item xs={3}>
             <Paper className={classes.paper}>
               <h2>User Registration</h2>
               <form className={classes.input}>
@@ -128,4 +128,4 @@ Register.propTypes = {
   classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(Register)
+export default withStyles(regStyles)(Register)

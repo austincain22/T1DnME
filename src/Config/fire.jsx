@@ -25,5 +25,3 @@ export const db = fire.firestore();
 //         //no user 
 //     }
 //  })
-
-
