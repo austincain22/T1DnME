@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 // import styles from '../Styles/index.css';
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
-import fire from '../Config/fire'
+import { db } from '../Config/fire'
+import { ForumsList } from '../Components/Forums/Forums'
 
 const styles = theme => ({
   root: {
@@ -19,7 +20,27 @@ const styles = theme => ({
 
 class Forums extends React.Component {
   state = {
-    value: 0
+    forums: []
+  }
+
+  getForum = async () => {
+    const forumName = await db
+      .collection('Forums')
+      .get()
+      .then(snapshot =>
+        snapshot.docs.map(doc => {
+          return {
+            ...doc.data(),
+            id: doc.id
+          }
+        })
+      )
+
+    console.log('Forum Names: ', forumName)
+
+    this.setState({
+      forums: forumName
+    })
   }
 
   handleChange = (event, value) => {
@@ -29,14 +50,20 @@ class Forums extends React.Component {
     this.setState({ value: index })
   }
 
+  async componentDidMount () {
+    this.getForum()
+  }
+
   render () {
     const { classes } = this.props
 
     return (
       <div className={classes.root}>
         <Grid container spacing={24}>
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>xs=12</Paper>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
+            <Paper className={classes.paper}>
+              <ForumsList />
+            </Paper>
           </Grid>
           <Grid item xs={6}>
             <Paper className={classes.paper}>xs=6</Paper>
