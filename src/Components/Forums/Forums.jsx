@@ -8,13 +8,20 @@ import Grid from '@material-ui/core/Grid'
 
 export class ForumsList extends Component {
   render () {
-    const { classes } = this.props
+    const { classes, forums } = this.props
 
     return (
-      <div className={classes}>
-        <Grid container>
+      <div className={classes} alignItems='center'>
+        <Grid container alignItems='center'>
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Paper className={classes} />
+            {forums.map(form => {
+              return ( 
+                <div key={form.id}> 
+                <p>{form.taskName}</p>
+                </div>
+              )
+            })}
           </Grid>
         </Grid>
       </div>
@@ -24,7 +31,6 @@ export class ForumsList extends Component {
 
 ForumsList.propTypes = {
   forums: PropTypes.array.isRequired,
-  deleteTask: PropTypes.func.isRequired
 }
 
 export default ForumsList

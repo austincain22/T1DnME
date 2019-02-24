@@ -55,17 +55,17 @@ class Forums extends React.Component {
   }
 
   render () {
-    const { classes } = this.props
+    const { classes, forums } = this.props
 
     return (
       <div className={classes.root}>
-        <Grid container spacing={24}>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid container alignItems='center' spacing={8}>
+          {/* <Grid item xs={12} sm={6} md={4} lg={3}> */}
             <Paper className={classes.paper}>
-              <ForumsList />
+              <ForumsList forums={this.state.forums} />
             </Paper>
-          </Grid>
-          <Grid item xs={6}>
+          {/* </Grid> */}
+          {/* <Grid item xs={6}>
             <Paper className={classes.paper}>xs=6</Paper>
           </Grid>
           <Grid item xs={6}>
@@ -82,7 +82,7 @@ class Forums extends React.Component {
           </Grid>
           <Grid item xs={3}>
             <Paper className={classes.paper}>xs=3</Paper>
-          </Grid>
+          </Grid> */}
         </Grid>
       </div>
     )
