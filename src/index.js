@@ -12,7 +12,6 @@ import DailyView from './Pages/DailyView';
 import indexRoutes from "./Routes/index"
 import SideBar from './Components/SideBar';
 
-<<<<<<< Updated upstream
 
 // const routing = (
 //   /*<Router >
@@ -43,49 +42,6 @@ import SideBar from './Components/SideBar';
 //         <li>
 //           <Link to="/dm">Direct Message</Link>
 //         </li>
-=======
-const routing = (
-  /*<Router >
-    <Switch>
-    {indexRoutes.map((route, key) => {
-      return <Route path={route.path} component={route.component} key={key}>{route.page}</Route>;
-    })}
-  </Switch>
-</Router>*/
-  <Router>
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/register">Registration</Link>
-        </li>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li>
-          <Link to="/forums">Forums</Link>
-        </li>
-        <li>
-          <Link to="/sidebar">SideBar</Link>
-        </li>
-        <li>
-          <Link to="/dm">Direct Message</Link>
-        </li>
-        <li>
-          <Link to="/dailyView">Daily Entries</Link>
-        </li>
-
-      </ul>
-      <Route exact path="/" component={Home} />
-      <Route path="/register" component={Register} />
-      <Route path="/login" component={Login} />
-      <Route path="/forums" component={Forums} />
-      <Route path="/sidebar" component={SideBar} />
-      <Route path="/dm" component={DMing} />
-      <Route path="/dailyView" component={DailyView}/>
->>>>>>> Stashed changes
 
 //       </ul>
 //       <Route exact path="/" component={Home} />
