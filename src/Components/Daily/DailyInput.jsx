@@ -1,0 +1,1 @@
+//this is the rendering component of the dailyview page

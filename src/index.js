@@ -6,6 +6,7 @@ import Home from './Pages/HomePage';
 import Register from './Pages/RegisterPage';
 import Login from './Pages/LoginPage';
 import Forums from './Pages/ForumsPage';
+import DMing from './Pages/DmPage';
 
 import indexRoutes from "./Routes/index"
 import SideBar from './Components/SideBar';
@@ -36,12 +37,17 @@ const routing = (
         <li>
           <Link to="/sidebar">SideBar</Link>
         </li>
+        <li>
+          <Link to="/dm">Direct Message</Link>
+        </li>
+
       </ul>
       <Route exact path="/" component={Home} />
       <Route path="/register" component={Register} />
       <Route path="/login" component={Login} />
       <Route path="/forums" component={Forums} />
       <Route path="/sidebar" component={SideBar} />
+      <Route path="/dm" component={DMing} />
 
     </div>
   </Router>
