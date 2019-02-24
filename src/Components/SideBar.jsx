@@ -27,7 +27,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox'
 import MailIcon from '@material-ui/icons/Mail'
 
 
-const drawerWidth = 240
+const drawerWidth = 240;
 
 const styles = theme => ({
   root: {
@@ -160,7 +160,6 @@ class sideBar extends React.Component {
             [classes.contentShift]: open,
           })}
         >
-          <div className={classes.drawerHeader} />
           <Typography paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent

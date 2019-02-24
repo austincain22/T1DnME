@@ -85,7 +85,6 @@ class Register extends React.Component {
 
   //handle changes from email and password
   handleChange(e) {
-    console.log(e.target.value);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -96,6 +95,7 @@ class Register extends React.Component {
 
     return (
       <div className={classes.root}>
+
         <Grid container spacing={24} justify="center">
           <Grid item xs={3} zeroMinWidth>
             <Paper className={classes.paper}>
