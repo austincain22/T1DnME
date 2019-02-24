@@ -61,7 +61,13 @@ class Login extends Component {
     return (
       <div className={classes.root}>
 
-        <Grid container spacing={24} justify="center">
+        <Grid container spacing={0}
+          alignItems="center"
+          justify="center"
+          style={{
+            minHeight: '100vh',
+            minWidth: '200vh'
+          }}>
           <Grid item xs={3} zeroMinWidth>
             <Paper className={classes.paper}>
               <h2>User Login</h2>

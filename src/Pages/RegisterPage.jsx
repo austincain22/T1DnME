@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import '../Styles/User.css'
+//import '../Styles/User.css'
 import { auth } from '../Config/fire'
 import { db } from '../Config/fire';
 import { provider } from '../Config/fire'
@@ -95,8 +95,15 @@ class Register extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root} display="center">
-        <Grid container spacing={24} justify="center" >
+      <div className={classes.root} >
+        <Grid container
+          spacing={0}
+          alignItems="center"
+          justify="center"
+          style={{
+            minHeight: '100vh',
+            minWidth: '200vh'
+          }}>
           <Grid item xs={3}>
             <Paper className={classes.paper}>
               <h2>User Registration</h2>

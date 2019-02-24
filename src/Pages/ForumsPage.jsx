@@ -66,7 +66,7 @@ class Forums extends React.Component {
   //   })
   // }
 
-  handleTaskClick () {
+  handleTaskClick() {
     this.setState(prevState => ({
       taskPressed: !prevState.taskPressed
     }))
@@ -79,17 +79,23 @@ class Forums extends React.Component {
     this.setState({ value: index })
   }
 
-  async componentDidMount () {
+  async componentDidMount() {
     this.getForum()
   }
 
-  render () {
+  render() {
     const { classes } = this.props
     const { forums } = this.state
 
     return (
       <div className={classes.root}>
-        <Grid container justify='center' spacing={12}>
+        <Grid container spacing={0}
+          alignItems="center"
+          justify="center"
+          style={{
+            minHeight: '100vh',
+            minWidth: '200vh'
+          }}>
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Paper className={classes.paper}>
               <ForumsList
