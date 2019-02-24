@@ -5,7 +5,8 @@ import Grid from '@material-ui/core/Grid'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import child from "../Images/child.jpg";
-
+import DailyInput from '../Components/Daily/DailyInput.jsx';
+import DailyView from './DailyView';
   const styles = theme => ({
     root: {
       flexGrow: 1

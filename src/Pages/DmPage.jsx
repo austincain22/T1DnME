@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 import '../Styles/GlobalStyles.css';
 import Form from '../Components/Form/Form.jsx';
-import db from 'firebase';
 import Grid from '@material-ui/core/Grid';
+
+import db from "../Config/fire.jsx";
+
 
 
 

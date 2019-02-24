@@ -15,7 +15,12 @@ class DailyView extends Component {
     
     render() {
       return (
-        {DailyInput}
+          <div className="HomeMain">
+             I am testing this yet again
+                < DailyInput />
+       
+        </div>
+
             
         
           
