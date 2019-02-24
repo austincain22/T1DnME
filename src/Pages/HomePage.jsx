@@ -21,26 +21,35 @@ import child from "../Images/child.jpg";
   render () {
     const { classes } = this.props
     return( 
+        <div>
+        <div className="HomeHeader">
 
+        </div>
+        <div className="SideBar">
+        
+        </div>
         <div className="HomeMain">
         
         
-            <Grid container spacing={24}
+            <Grid container spacing={40}
             direction="row"
             justify="center"
             className="bodyContainer">
-                
+                <Grid item xs={10} className="gridItem">
+                    <p className="bodyHead">
+                        <h1>t1d and me</h1>
+                    </p>
+                </Grid>
                 <Grid item xs={10} className="gridItem">
                     <img src={child} className="gridPic"></img>
                 </Grid>
 
-                <Grid item xs={10} className="gridItem">
-                    <Paper/>
-                </Grid>
+                
                 
                 </Grid>
+            
         
-        
+        </div>
         </div>
     )
   }
