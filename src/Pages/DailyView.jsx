@@ -16,8 +16,18 @@ class DailyView extends Component {
     render() {
       return (
           <div className="HomeMain">
-             I am testing this yet again
-                < DailyInput />
+             <Grid container spacing={0}
+          alignItems="center"
+          justify="space-evenly"
+          style={{
+            minHeight: '100vh',
+            minWidth: '200vh'
+          }}>
+          <Grid item xs={24}>
+          < DailyInput />
+          </Grid>
+                
+                </Grid>
        
         </div>
 

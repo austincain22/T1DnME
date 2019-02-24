@@ -31,7 +31,13 @@ class DMing extends Component {
   render() {
     return (
       <div className="app">
-      <Grid container justify="center" spacing={40}>
+     <Grid container spacing={0}
+          alignItems="center"
+          justify="space-evenly"
+          style={{
+            minHeight: '100vh',
+            minWidth: '200vh'
+          }}>
         <div className="app__header">
           
           

@@ -32,6 +32,7 @@ import Register from '../Pages/RegisterPage.jsx';
 import Login from '../Pages/LoginPage.jsx';
 import Forums from '../Pages/ForumsPage.jsx';
 import DMing from '../Pages/DmPage.jsx';
+import DailyView from '../Pages/DailyView.jsx';
 
 
 const drawerWidth = 240;
@@ -185,6 +186,11 @@ class sideBar extends React.Component {
                       <ListItemText primary="DM" />
                     </ListItem>
                   </Link>
+                  <Link to="/dailyView">
+                    <ListItem button>
+                      <ListItemText primary="DV" />
+                    </ListItem>
+                  </Link>
                 </div>
               </List>
               <Divider />
@@ -200,6 +206,7 @@ class sideBar extends React.Component {
               <Route path="/login" component={Login} />
               <Route path="/forums" component={Forums} />
               <Route path="/dms" component={DMing} />
+              <Route path="/dailyView" component={DailyView} />
             </main>
           </div>
         </Router>
