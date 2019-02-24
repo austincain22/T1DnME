@@ -132,7 +132,7 @@ class sideBar extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" noWrap>
-              Persistent drawer
+              T1DnMe
             </Typography>
           </Toolbar>
         </AppBar>
