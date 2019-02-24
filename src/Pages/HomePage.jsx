@@ -19,7 +19,7 @@ import child from "../Images/child.jpg";
 
   class Home extends Component {
   render () {
-    const { classes } = this.props
+    
     return( 
         <div>
         <div className="HomeHeader">
