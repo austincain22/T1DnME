@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import '../Styles/User.css';
 import { auth } from '../Config/fire';
-import { db } from '../Config/fire';
+//import { db } from '../Config/fire';
 import { provider } from '../Config/fire';
 
 class Register extends Component {
