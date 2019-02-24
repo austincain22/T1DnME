@@ -17,3 +17,12 @@ body {
 
 
 }
+
+
+
+.HomeHeader{
+    height:25px;
+    width:100%;
+    vertical-align:top;
+    display:inline-block;
+}
