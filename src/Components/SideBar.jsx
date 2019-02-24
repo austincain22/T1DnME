@@ -1,7 +1,7 @@
 import React from 'react'
 // import ReactDOM from 'react-dom';
 //import './Styles/index.css'
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Switch, Redirect, Route, Link, BrowserRouter as Router } from 'react-router-dom'
 // import Home from '../Pages/HomePage';
 // import Register from '../Pages/RegisterPage';
 // import Login from '../Pages/LoginPage';
@@ -25,6 +25,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import InboxIcon from '@material-ui/icons/MoveToInbox'
 import MailIcon from '@material-ui/icons/Mail'
+
 
 const drawerWidth = 240
 
@@ -85,9 +86,12 @@ const styles = theme => ({
   },
 });
 
+
+
+
 class sideBar extends React.Component {
   state = {
-    open: false
+    open: true
   }
 
   handleDrawerOpen = () => {
@@ -140,22 +144,16 @@ class sideBar extends React.Component {
           </div>
           <Divider />
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
+            {['Home', 'Forums', 'FAQ', 'Register'].map((text, index) => (
+              <Link to={"/" + text}>
+                <ListItem button key={text}>
+                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItem>
+              </Link>
             ))}
           </List>
           <Divider />
-          <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
         </Drawer>
         <main
           className={classNames(classes.content, {
