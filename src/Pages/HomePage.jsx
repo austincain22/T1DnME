@@ -39,6 +39,12 @@ import child from "../Images/child.jpg";
                     <p className="bodyHead">
                         <h1>t1d and me</h1>
                     </p>
+                    
+                    <p className="bodyHead">
+                        Put in something inspiring.....
+                    </p>
+                    
+                    
                 </Grid>
                 <Grid item xs={10} className="gridItem">
                     <img src={child} className="gridPic"></img>

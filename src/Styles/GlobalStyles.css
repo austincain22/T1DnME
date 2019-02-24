@@ -30,13 +30,18 @@ body {
     
 
     height: 100%;
-    width: 50%;
+    width: 100%;
     float:right;
     
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
     
+}
+
+.central {
+    float:center;
+    text-align:center;
 }
 
 .HomeHeader{
